@@ -16,5 +16,20 @@ namespace tabuleiro
             this.colunas = colunas;
             pecas = new Peca[linhas, colunas];
         }
+
+        //metodo para dar acesso para uma peça individial
+        public Peca peca(int linha, int coluna)
+        {
+            return pecas[linha, coluna];
+        }
+
+        //colocar uma peça no tabuleiro
+        public void colocarPeca(Peca p, Posicao pos)
+        {
+            //matriz de peças
+            pecas[pos.linha, pos.coluna] = p;
+            p.posicao = pos;
+        }
+
     }
 }
