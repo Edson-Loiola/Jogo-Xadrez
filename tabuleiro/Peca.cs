@@ -4,7 +4,7 @@ using System.Text;
 
 namespace tabuleiro
 {
-    class Peca  //peça generica
+    abstract class Peca  //peça generica
     {
         public Posicao posicao { get; set; }
         public Cor cor { get; protected set; } //pode ser acessada por outras classes mas só pode ser alterada ela mesmo sub classes
@@ -23,5 +23,7 @@ namespace tabuleiro
         {
             qteMovimentos++;
         }
+
+        public abstract bool[,] movimentosPossiveis();  //metodo abstrato, será usado nas peças especificas
     }
 }
